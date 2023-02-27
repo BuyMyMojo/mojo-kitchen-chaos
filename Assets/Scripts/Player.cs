@@ -7,12 +7,15 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private GameInput gameInput;
+    [SerializeField] private LayerMask countersLayerMask;
 
     private bool isWalking;
+    private Vector3 lastInteractDir;
 
     private void Update()
     {
         HandleMovement();
+        HandleInteractions();
     }
 
     public bool IsWalking()
@@ -20,6 +23,36 @@ public class Player : MonoBehaviour
         return isWalking;
     }
 
+    /// <summary>
+    /// Handle object interactions.
+    /// </summary>
+    private void HandleInteractions()
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+
+        Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
+
+        // Kepp a constantly updating record of the last move direction.
+        // This means you can interact without holding down a direction.
+        if (moveDir != Vector3.zero)
+        {
+            lastInteractDir = moveDir;
+        }
+
+        float interactDistance = 2f;
+        if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
+        {
+            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter)) 
+            {
+                // Has Clear Counter
+                clearCounter.Interact();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handle the player movement and collision.
+    /// </summary>
     private void HandleMovement()
     {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
