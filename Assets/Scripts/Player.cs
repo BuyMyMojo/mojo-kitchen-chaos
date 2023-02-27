@@ -81,12 +81,12 @@ public class Player : MonoBehaviour
                     SetSelectedCounter(clearCounter);
                 }
             }
-            else
+            else if (selectedCounter != null)
             {
                 SetSelectedCounter(null);
             }
         }
-        else
+        else if (selectedCounter != null)
         {
             SetSelectedCounter(null);
         }
