@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 124
+  controlID: 30
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 168
+  controlID: 94
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 77
+  controlID: 20
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -316,7 +316,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -12914
+  m_LastSelectedObjectID: -1994
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1249,10 +1249,10 @@ MonoBehaviour:
       workTreeStatus: 3
     changedFilesText: 10 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2023-02-26T02:56:41.802+11:00
+      updatedTimeString: 2023-02-28T05:26:22.905+11:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2023-02-26T03:14:55.147+11:00
+      updatedTimeString: 2023-02-28T05:40:39.407+11:00
       cacheType: 6
     lastLocksChangedEvent:
       updatedTimeString: 0001-01-01T00:00:00.000+00:00
@@ -2256,23 +2256,23 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs/KitchenObjects
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
-  m_ViewMode: 1
+  m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/ScriptableObjects/KitchenObjectSO
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Nextcloud\Projects\Unity\MojosKitchenChaos
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 606e0000
-    m_LastClickedID: 28256
-    m_ExpandedIDs: 00000000606e0000
+    m_SelectedIDs: 208d0000
+    m_LastClickedID: 36128
+    m_ExpandedIDs: 000000005c6e0000f06f000074700000f6730000f0790000148d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2297,26 +2297,26 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 140}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000606e0000
+    m_ExpandedIDs: ffffffff000000005c6e0000f06f0000fa6f0000f6730000e0870000148d0000208d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: CheeseBlock
+      m_OriginalName: CheeseBlock
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 35504
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 6}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -2327,7 +2327,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ea050000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2444,7 +2444,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0cfbffff
+      m_ExpandedIDs: 76ddfeff0efbffffc86d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2533,7 +2533,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -2559,7 +2559,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -2812,9 +2812,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.3747481, y: 2.1898932, z: 2.278783}
+    m_Target: {x: -0.34754992, y: -1.6813822, z: 4.151595}
     speed: 2
-    m_Value: {x: -1.3747481, y: 2.1898932, z: 2.278783}
+    m_Value: {x: -0.34754992, y: -1.6813822, z: 4.151595}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2860,13 +2860,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.34970486, y: -0.14475375, z: 0.05480269, w: -0.9240004}
+    m_Target: {x: 0.32488874, y: 0.3095771, z: -0.113483086, w: 0.8864479}
     speed: 2
-    m_Value: {x: -0.34970012, y: -0.14475179, z: 0.054801945, w: -0.9239878}
+    m_Value: {x: 0.32620844, y: 0.3093974, z: -0.113944024, w: 0.88593346}
   m_Size:
-    m_Target: 5.887631
+    m_Target: 6.3260193
     speed: 2
-    m_Value: 5.887631
+    m_Value: 0.5173555
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2932,7 +2932,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 2560, y: 1440}
+  m_TargetSize: {x: 1828, y: 930}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -2941,16 +2941,16 @@ MonoBehaviour:
   m_VSyncEnabled: 1
   m_Gizmos: 0
   m_Stats: 0
-  m_SelectedSizes: 05000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -1280
-    m_HBaseRangeMax: 1280
-    m_VBaseRangeMin: -720
-    m_VBaseRangeMax: 720
+    m_HBaseRangeMin: -914
+    m_HBaseRangeMax: 914
+    m_VBaseRangeMin: -465
+    m_VBaseRangeMax: 465
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -2970,7 +2970,7 @@ MonoBehaviour:
       y: 21
       width: 1828
       height: 930
-    m_Scale: {x: 0.6458333, y: 0.6458333}
+    m_Scale: {x: 1, y: 1}
     m_Translation: {x: 914, y: 465}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -2978,12 +2978,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1415.2258
-      y: -720
-      width: 2830.4517
-      height: 1440
+      x: -914
+      y: -465
+      width: 1828
+      height: 930
     m_MinimalGUI: 1
-  m_defaultScale: 0.6458333
+  m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1828, y: 951}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
