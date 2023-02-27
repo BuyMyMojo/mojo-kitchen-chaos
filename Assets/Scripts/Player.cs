@@ -12,6 +12,16 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        HandleMovement();
+    }
+
+    public bool IsWalking()
+    {
+        return isWalking;
+    }
+
+    private void HandleMovement()
+    {
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
@@ -32,7 +42,8 @@ public class Player : MonoBehaviour
             if (canMove)
             {
                 moveDir = moveDirX;
-            } else
+            }
+            else
             {
                 // Cannot move on X so attempt to move on Z
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
@@ -40,7 +51,8 @@ public class Player : MonoBehaviour
                 if (canMove)
                 {
                     moveDir = moveDirZ;
-                } else
+                }
+                else
                 {
                     // Cannot move at all
                 }
@@ -55,11 +67,6 @@ public class Player : MonoBehaviour
 
         float rotateSpeed = 10f;
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
-    }
-
-    public bool IsWalking()
-    {
-        return isWalking;
     }
 
 }
