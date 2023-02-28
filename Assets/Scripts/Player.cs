@@ -12,7 +12,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedcounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
-        public ClearCounter selectedCounter;
+        public BaseCounter selectedCounter;
     }
 
     [SerializeField] private float moveSpeed = 7f;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private bool isWalking;
     private Vector3 lastInteractDir;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
     private KitchenObject kitchenObject;
 
     private void Start()
@@ -67,7 +67,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
         Vector3 moveDir = new Vector3(inputVector.x, 0f, inputVector.y);
 
-        // Kepp a constantly updating record of the last move direction.
+        // Kepp a consistently updating record of the last move direction.
         // This means you can interact without holding down a direction.
         if (moveDir != Vector3.zero)
         {
@@ -75,21 +75,25 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         }
 
         float interactDistance = 2f;
+        // fire a raycast forward to search for objects in the countersLayerMask and output result to raycastHit
         if (Physics.Raycast(transform.position, lastInteractDir, out RaycastHit raycastHit, interactDistance, countersLayerMask))
         {
-            if (raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            // if the raycast hits an object of type BaseCounter
+            if (raycastHit.transform.TryGetComponent(out BaseCounter baseCounter))
             {
-                // Has Clear Counter
-                if (clearCounter != selectedCounter)
+                // if selectedCounter is not equal to baseCounter update it
+                if (baseCounter != selectedCounter)
                 {
-                    SetSelectedCounter(clearCounter);
+                    SetSelectedCounter(baseCounter);
                 }
             }
+            // else if no BaseCounter was hit and selectedCounter isn't null then set it to null
             else if (selectedCounter != null)
             {
                 SetSelectedCounter(null);
             }
         }
+        // else if no BaseCounter was hit and selectedCounter isn't null then set it to null
         else if (selectedCounter != null)
         {
             SetSelectedCounter(null);
@@ -109,47 +113,57 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         float moveDistance = moveSpeed * Time.deltaTime;
         float playerRadius = .7f;
         float playerHeight = 2f;
+        // fire a CapsuleCast (A 3D raycast in the shape of a capsule) to see if there is an object in the way of the player movement.
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDir, moveDistance);
 
+        // if the raycast hit something then this canMove is false and we attempt to move on eithery X or Z
         if (!canMove)
         {
-            // Cannot move towards moveDir
+            // cannot move towards moveDir
 
-            // Attempt only X move
+            // attempt only X move
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0).normalized;
             canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirX, moveDistance);
 
+            // if able to move on X then change moveDir to X
             if (canMove)
             {
                 moveDir = moveDirX;
             }
             else
             {
-                // Cannot move on X so attempt to move on Z
+                // cannot move on X so attempt to move on Z
                 Vector3 moveDirZ = new Vector3(0, 0, moveDir.z).normalized;
                 canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * playerHeight, playerRadius, moveDirZ, moveDistance);
+
+                // if able to move on Z then change moveDir to Z
                 if (canMove)
                 {
                     moveDir = moveDirZ;
                 }
                 else
                 {
-                    // Cannot move at all
+                    // cannot move at all so canMove is still false
                 }
             }
         }
+
         if (canMove)
         {
+            // add the time ajusted movement vector to current position which keep a consistent speed no matter the FPS
             transform.position += moveDir * moveDistance;
         }
 
+        // set isWalking to true if moveDir is not (0,0,0)
         isWalking = moveDir != Vector3.zero;
 
         float rotateSpeed = 10f;
+        // smothly rotate towards moveDir with a Slerp smoothed operation.
+        // Slerp is for like rotations while Lerp is for positions
         transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
     }
 
-    private void SetSelectedCounter(ClearCounter selectedCounter)
+    private void SetSelectedCounter(BaseCounter selectedCounter)
     {
         this.selectedCounter = selectedCounter;
 
