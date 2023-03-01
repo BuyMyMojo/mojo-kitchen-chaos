@@ -16,7 +16,8 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 
     public virtual void InteractAlternate(Player player)
     {
-        Debug.LogError("BaseCounter.InteractAlterante();");
+        // Debug.LogError("BaseCounter.InteractAlterante();");
+        // Don't do anything, not all Counters need alt interact actions.
     }
 
     public Transform GetKitchenObjectFollowTransform()
