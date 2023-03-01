@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957ad67ddc24d494a9ca1e6a606070b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
+  moveSpeed: 6
   gameInput: {fileID: 721208334}
   countersLayerMask:
     serializedVersion: 2
