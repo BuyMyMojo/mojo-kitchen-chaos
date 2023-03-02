@@ -79,17 +79,17 @@ public class DeliveryManager : MonoBehaviour
                         plateContentsMatchesRecipe = false;
                     }
 
-                    if (plateContentsMatchesRecipe)
-                    {
-                        // Player delivered correct recipe
+                }
+                if (plateContentsMatchesRecipe)
+                {
+                    // Player delivered correct recipe
 
-                        waitingRecipeSOList.RemoveAt(i);
+                    waitingRecipeSOList.RemoveAt(i);
 
-                        OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
-                        OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
+                    OnRecipeCompleted?.Invoke(this, EventArgs.Empty);
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
 
-                        return;
-                    }
+                    return;
                 }
             }
         }
