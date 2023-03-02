@@ -34,7 +34,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private void GameInput_OnInteractAlteranteAction(object sender, EventArgs e)
     {
-        if (GameStateManager.Instace.IsGamePlaying()) return;
+        if (!GameStateManager.Instace.IsGamePlaying()) return;
 
         if (selectedCounter != null)
         {
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        if (GameStateManager.Instace.IsGamePlaying()) return;
+        if (!GameStateManager.Instace.IsGamePlaying()) return;
 
         if (selectedCounter != null)
         {
