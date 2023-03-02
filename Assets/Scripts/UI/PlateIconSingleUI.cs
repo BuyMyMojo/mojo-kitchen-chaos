@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PlateIconSingleUI : MonoBehaviour
 {
-
-    [SerializeField] private Image image;
+    // For some reason it was pulling Image from somewhere else randomly near the end of development so I had to specify UnityEngine.UI.Image??
+    [SerializeField] private UnityEngine.UI.Image image;
 
     public void SetKitchenObjectSO(KitchenObjectSO kitchenObjectSO)
     {
