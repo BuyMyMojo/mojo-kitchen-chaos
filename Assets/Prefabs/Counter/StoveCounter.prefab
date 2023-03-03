@@ -1040,6 +1040,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8751798593304612225, guid: 40be420ea0f02144c97ad355735491a4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.2509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751798593304612225, guid: 40be420ea0f02144c97ad355735491a4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751798593304612225, guid: 40be420ea0f02144c97ad355735491a4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 9211531558445672587, guid: 40be420ea0f02144c97ad355735491a4,
         type: 3}
       propertyPath: hasProgressGameObject
@@ -1048,7 +1063,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7989712882339444641, guid: 40be420ea0f02144c97ad355735491a4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 82246450516513983}
+    - targetCorrespondingSourceObject: {fileID: 7989712882339444641, guid: 40be420ea0f02144c97ad355735491a4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6944372432452518497}
   m_SourcePrefab: {fileID: 100100000, guid: 40be420ea0f02144c97ad355735491a4, type: 3}
 --- !u!224 &265883278189504360 stripped
 RectTransform:
@@ -1056,3 +1079,43 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 8851431658892468206}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1456830621909968975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7989712882339444641, guid: 40be420ea0f02144c97ad355735491a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 8851431658892468206}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &82246450516513983
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456830621909968975}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0ddac7101c422c41a1cd8711d5291a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6944372432452518497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456830621909968975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d92978b779dd84b90fb03815ec18ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stoveCounter: {fileID: 5065327384487018965}
