@@ -29,7 +29,11 @@ public class DeliveryManager : MonoBehaviour
 
     private void Update()
     {
+        if (GameStateManager.Instace.IsGamePlaying())
+        {
         spawnRecipeTimer -= Time.deltaTime;
+        }
+        
         if (spawnRecipeTimer <= 0f)
         {
             spawnRecipeTimer = spawnRecipeTimerMax;
