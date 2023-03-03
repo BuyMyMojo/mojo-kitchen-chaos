@@ -172,10 +172,14 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         // set isWalking to true if moveDir is not (0,0,0)
         isWalking = moveDir != Vector3.zero;
 
-        float rotateSpeed = 10f;
-        // smothly rotate towards moveDir with a Slerp smoothed operation.
-        // Slerp is for like rotations while Lerp is for positions
-        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        if (isWalking)
+        {
+            float rotateSpeed = 10f;
+            // smothly rotate towards moveDir with a Slerp smoothed operation.
+            // Slerp is for like rotations while Lerp is for positions
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        }
+        
     }
 
     private void SetSelectedCounter(BaseCounter selectedCounter)

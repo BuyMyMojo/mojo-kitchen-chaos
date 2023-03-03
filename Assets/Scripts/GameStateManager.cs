@@ -82,7 +82,6 @@ public class GameStateManager : MonoBehaviour
                 break;
         }
 
-        Debug.Log(state);
     }
 
     public bool IsGamePlaying()
